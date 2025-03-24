@@ -1,1 +1,24 @@
-<p>data-binding works!</p>
+<!-- one way data binding(from component to view)  -->
+<!-- interpolation -->
+<h1>Welcome {{ username }}</h1>
+<!-- property binding  -->
+<img [src]="profilepic" />
+<!-- attribute binding  -->
+<!-- button is disabled when disabled is true  -->
+<button [attr.disabled]="isDisabled ? true : null">Click Me</button>
+<!-- input has a dynamic label enter your name  -->
+<input [attr.arialabel]="label" />
+<p [class.errror]="isError">Error message</p>
+<p [class.success]="!isError">Success Message</p>
+<!-- multiple class binding  -->
+<p [class]="isError ? 'error' : 'success'">conditonal class</p>
+<!-- style binding  -->
+<p [style.color]="isError ? 'red' : 'green'">Status</p>
+<p [style.backgroundColor]="bgcolor">Colored box</p>
+
+<!-- one way data binding(from view to component) -->
+<button (click)="sayHello()">Click me</button>
+
+<!-- two way data binding  -->
+<input [(ngModel)]="username" />
+<p>Welcome:{{ username }}</p>
