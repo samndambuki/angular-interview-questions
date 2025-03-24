@@ -1,0 +1,5 @@
+<!-- <p>reactive-forms works!</p> -->
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <input type="text" formControlName="username" />
+  <button type="submit">Submit</button>
+</form>

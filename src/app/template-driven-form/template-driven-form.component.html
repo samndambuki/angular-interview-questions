@@ -1,0 +1,5 @@
+<!-- <p>template-driven-form works!</p> -->
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <input type="text" name="username" [(ngModel)]="user.userName" required />
+  <button type="submit">Submit</button>
+</form>
