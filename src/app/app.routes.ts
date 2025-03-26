@@ -7,6 +7,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { HandlingEventsComponent } from './handling-events/handling-events.component';
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
+import { ConditionalRenderingComponent } from './conditional-rendering/conditional-rendering.component';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -18,4 +19,5 @@ export const routes: Routes = [
   { path: 'reactive', component: ReactiveFormsComponent },
   { path: 'events', component: HandlingEventsComponent },
   { path: 'hooks', component: LifecycleHooksComponent },
+  { path: 'rendering', component: ConditionalRenderingComponent },
 ];

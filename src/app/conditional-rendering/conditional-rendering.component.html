@@ -1,0 +1,31 @@
+<!-- <p>conditional-rendering works!</p> -->
+
+<!-- *ngIf  -->
+<!-- element is removed from the DOM when the condition is false  -->
+<p *ngIf="isVisible">This text is visible</p>
+<button (click)="isVisible = !isVisible">Toggle</button>
+
+<!-- *ngIf with else block  -->
+<p *ngIf="isVisible; else elseBlock">Text is shown</p>
+<!-- dynamically render content  -->
+<!-- content is not rendered unless referenced  -->
+<ng-template #elseBlock>
+  <p>Test is hidden</p>
+</ng-template>
+
+<!-- ngSwitch -->
+<!-- for multiple conditions -->
+
+<!-- bind status variable to ngSwitch controlling which case is displayed  -->
+<div [ngSwitch]="status">
+  <p *ngSwitchCase="'success'">Success Message</p>
+  <p *ngSwitchCase="'error'">Error message</p>
+  <!-- if status doesnt match any case  -->
+  <p *ngSwitchDefault>Default message</p>
+</div>
+
+<button (click)="status = 'success'">Success</button>
+<button (click)="status = 'error'">Error</button>
+
+<!-- hidden  -->
+<p [hidden]="!isVisible">This element is hidden but remains in the DOM</p>
