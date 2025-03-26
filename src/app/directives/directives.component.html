@@ -1,1 +1,24 @@
-<p>directives works!</p>
+<!-- <p>directives works!</p> -->
+<!-- 1. component  -->
+<!-- 2. structural  -->
+<!-- conditionally show or hide elements  -->
+<!-- a) ngIf -->
+<!-- loop through a list  -->
+<!-- b) ngFor -->
+<ul>
+  <!-- loop through the fruits array and create a li for each fruit  -->
+  <li *ngFor="let fruit of fruits">{{ fruit }}</li>
+</ul>
+<!-- c) ngSwitch  -->
+<!-- display content based on a condition  -->
+
+<!-- 3. attribute directives  -->
+<!-- change appearance or behaviour of elements without modifying DOM structure  -->
+<!-- a) [ngClass]  dynamically add or remove css classes   -->
+<!-- we bind the active css class to the p element if isActive is true  -->
+<p [ngClass]="{ active: 'isActive' }">This is a paragraph</p>
+<button (click)="isActive = !isActive">Toggle</button>
+
+<!-- b) [ngStyle] - dynamically apply inline styles  -->
+<p [ngStyle]="{ color: textColor, 'font-size': '20px' }">Styled text</p>
+<button (click)="textColor = 'blue'">Change color</button>
