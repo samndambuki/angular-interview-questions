@@ -9,6 +9,7 @@ import { HandlingEventsComponent } from './handling-events/handling-events.compo
 import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.component';
 import { ConditionalRenderingComponent } from './conditional-rendering/conditional-rendering.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { UseServiceComponent } from './use-service/use-service.component';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -22,4 +23,5 @@ export const routes: Routes = [
   { path: 'hooks', component: LifecycleHooksComponent },
   { path: 'rendering', component: ConditionalRenderingComponent },
   { path: 'directives', component: DirectivesComponent },
+  { path: 'service', component: UseServiceComponent },
 ];
