@@ -10,6 +10,8 @@ import { LifecycleHooksComponent } from './lifecycle-hooks/lifecycle-hooks.compo
 import { ConditionalRenderingComponent } from './conditional-rendering/conditional-rendering.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { UseServiceComponent } from './use-service/use-service.component';
+import { RoutingComponent } from './routing/routing.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -24,4 +26,9 @@ export const routes: Routes = [
   { path: 'rendering', component: ConditionalRenderingComponent },
   { path: 'directives', component: DirectivesComponent },
   { path: 'service', component: UseServiceComponent },
+  { path: 'routing', component: RoutingComponent },
+  //redirect
+  { path: '', redirectTo: 'hello', pathMatch: 'full' },
+  //wild card
+  { path: '**', component: NotFoundComponent },
 ];
