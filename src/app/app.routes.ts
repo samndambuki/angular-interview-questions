@@ -22,6 +22,9 @@ import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ConfirmExitGuard } from './confirmexit.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { UserResolver } from './user.resolver';
+import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
+import { ProductsComponent } from './products/products.component';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -59,6 +62,11 @@ export const routes: Routes = [
     component: ProfileComponent,
     resolve: { user: UserResolver },
   },
+  //defining a route with a parameter
+  //:id is a dynamic route parameter
+  { path: 'user/:id', component: UserComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'home', component: HomeComponent },
 
   //redirect
   { path: '', redirectTo: 'hello', pathMatch: 'full' },
