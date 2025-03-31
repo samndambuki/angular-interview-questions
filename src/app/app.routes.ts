@@ -12,6 +12,16 @@ import { DirectivesComponent } from './directives/directives.component';
 import { UseServiceComponent } from './use-service/use-service.component';
 import { RoutingComponent } from './routing/routing.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './auth.guard';
+import { AdminComponent } from './admin/admin.component';
+import { AdminGuard } from './admin.guard';
+import { SettingsComponent } from './settings/settings.component';
+import { EditprofileComponent } from './editprofile/editprofile.component';
+import { ConfirmExitGuard } from './confirmexit.guard';
+import { ProfileComponent } from './profile/profile.component';
+import { UserResolver } from './user.resolver';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -27,6 +37,29 @@ export const routes: Routes = [
   { path: 'directives', component: DirectivesComponent },
   { path: 'service', component: UseServiceComponent },
   { path: 'routing', component: RoutingComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivateChild: [AdminGuard],
+    children: [{ path: 'settings', component: SettingsComponent }],
+  },
+  {
+    path: 'editprofile',
+    component: EditprofileComponent,
+    canDeactivate: [ConfirmExitGuard],
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    resolve: { user: UserResolver },
+  },
+
   //redirect
   { path: '', redirectTo: 'hello', pathMatch: 'full' },
   //wild card
