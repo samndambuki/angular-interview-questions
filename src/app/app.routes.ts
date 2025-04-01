@@ -25,6 +25,7 @@ import { UserResolver } from './user.resolver';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
+import { ListUsersComponent } from './list-users/list-users.component';
 
 export const routes: Routes = [
   { path: '', component: HelloComponent },
@@ -62,11 +63,14 @@ export const routes: Routes = [
     component: ProfileComponent,
     resolve: { user: UserResolver },
   },
+
   //defining a route with a parameter
   //:id is a dynamic route parameter
   { path: 'user/:id', component: UserComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'home', component: HomeComponent },
+
+  { path: 'listusers', component: ListUsersComponent },
 
   //redirect
   { path: '', redirectTo: 'hello', pathMatch: 'full' },

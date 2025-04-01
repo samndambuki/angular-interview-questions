@@ -1,0 +1,7 @@
+<!-- <p>list-users works!</p> -->
+<h2>List users</h2>
+
+<ul>
+  <li *ngFor="let user of users">{{ user.name }}</li>
+</ul>
+<button (click)="addUser()">add user</button>
